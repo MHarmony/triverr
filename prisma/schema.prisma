@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id        String     @id @default(cuid())
+  title     String     @unique
+  active    Boolean    @default(true)
+  author    String
+  game      Game       @relation(fields: [gameId], references: [id])
+  gameId    String
+  questions Question[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model Game {
+  id         String     @id @default(cuid())
+  title      String     @unique
+  active     Boolean    @default(true)
+  author     String
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  categories Category[]
+  questions  Question[]
+}
+
+model Question {
+  id          String   @id @default(cuid())
+  content     String   @unique
+  answerIndex Int?
+  answers     String?
+  author      String
+  active      Boolean  @default(true)
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  String
+  game        Game     @relation(fields: [gameId], references: [id])
+  gameId      String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
