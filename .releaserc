@@ -1,12 +1,6 @@
 {
   "branches": [
-    {
-      "name": "main"
-    },
-    {
-      "name": "next",
-      "channel": "next"
-    }
+    "main"
   ],
   "repositoryUrl": "https://github.com/MHarmony/triverr",
   "plugins": [
