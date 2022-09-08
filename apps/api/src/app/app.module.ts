@@ -3,7 +3,10 @@ import { ConfigModule } from '@nestjs/config';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { ThrottlerModule } from '@nestjs/throttler';
 import * as Joi from 'joi';
+import { CategoryModule } from '../category/category.module';
+import { GameModule } from '../game/game.module';
 import { PrismaModule } from '../prisma/prisma.module';
+import { QuestionModule } from '../question/question.module';
 
 @Module({
   imports: [
@@ -32,7 +35,10 @@ import { PrismaModule } from '../prisma/prisma.module';
     ThrottlerModule.forRoot({
       ttl: 60,
       limit: 10
-    })
+    }),
+    CategoryModule,
+    GameModule,
+    QuestionModule
   ],
   providers: [
     {
