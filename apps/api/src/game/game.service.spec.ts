@@ -89,24 +89,14 @@ describe('GameService', () => {
 
   describe('when getting games by author', () => {
     it('should return the list of games', async () => {
-      const mockValue: Game[] = [
-        {
-          id: cuid(),
-          title: 'Game 1',
-          author: 'User 1',
-          active: true,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        }
-      ];
+      const author = 'User 1';
+      const mockValue: Game[] = [defaultBaseGame];
       const getGamesByAuthorSpy = jest.spyOn(service, 'getGamesByAuthor');
 
       prismaService.game.findMany = jest.fn().mockResolvedValueOnce(mockValue);
 
-      await expect(service.getGamesByAuthor('User 1')).resolves.toStrictEqual(
-        mockValue
-      );
-      expect(getGamesByAuthorSpy).toBeCalledWith('User 1');
+      await expect(service.getGamesByAuthor(author)).resolves.toStrictEqual(mockValue);
+      expect(getGamesByAuthorSpy).toBeCalledWith(author);
     });
   });
 });
