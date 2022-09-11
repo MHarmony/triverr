@@ -1,5 +1,5 @@
-import { Category } from './category';
-import { Game } from './game';
+import { Category } from './category.interface';
+import { Game } from './game.interface';
 
 export interface Question {
   id: string;

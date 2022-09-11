@@ -20,6 +20,9 @@
     "paths": {
       "@triverr/api-interfaces": [
         "libs/api-interfaces/src/index.ts"
+      ],
+      "@triverr/api-exceptions": [
+        "libs/api-exceptions/src/index.ts"
       ]
     }
   },

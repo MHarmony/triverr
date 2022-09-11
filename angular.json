@@ -4,6 +4,7 @@
   "projects": {
     "api": "apps/api",
     "api-interfaces": "libs/api-interfaces",
+    "api-exceptions": "libs/api-exceptions",
     "triverr": "apps/triverr",
     "triverr-e2e": "apps/triverr-e2e"
   }

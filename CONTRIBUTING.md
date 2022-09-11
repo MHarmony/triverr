@@ -214,10 +214,11 @@ The following is the list of supported scopes:
 
 - **api**: for changes made on `apps/api` directory
 - **api-interfaces**: for changes made on `libs/api-interfaces` directory
+- **api-exceptions**: for changes made on `libs/api-exceptions` directory
 - **triverr**: for changes made on `apps/triverr` directory
 - **triverr-e2e**: for changes made on `apps/triverr-e2e` directory
 
-If your change affect more than one package, separate the scopes with a comma (e.g. `api,api-interfaces,triverr,triverr-e2e`).
+If your change affect more than one package, separate the scopes with a comma (e.g. `api,api-interfaces,api-exceptions,triverr,triverr-e2e`).
 
 ### Subject
 
