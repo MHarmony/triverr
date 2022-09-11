@@ -113,4 +113,19 @@ describe('CategoryService', () => {
       expect(getCategoriesByAuthorSpy).toBeCalledWith(author);
     });
   });
+
+  describe('when getting categories by game', () => {
+    it('should return the list of categories', async () => {
+      const gameId = defaultBaseCategory.game.id;
+      const mockValue: Category[] = [defaultBaseCategory];
+      const getCategoriesByGameSpy = jest.spyOn(service, 'getCategoriesByGame');
+
+      prismaService.category.findMany = jest.fn().mockResolvedValueOnce(mockValue);
+
+      await expect(service.getCategoriesByGame(gameId)).resolves.toStrictEqual(
+        mockValue
+      );
+      expect(getCategoriesByGameSpy).toBeCalledWith(gameId);
+    });
+  });
 });

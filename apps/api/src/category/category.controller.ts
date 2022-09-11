@@ -59,4 +59,17 @@ export class CategoryController {
   async getGamesByAuthor(@Param('author') author: string): Promise<Category[]> {
     return this.categoryService.getCategoriesByAuthor(author);
   }
+
+  @Get('game/:gameId')
+  @ApiOperation({
+    description: 'Get all categories by game',
+    summary: 'Get all categories by game'
+  })
+  @ApiOkResponse({
+    description: 'Successfully retrieved all categories for the game',
+    isArray: true
+  })
+  async getCategoriesByGame(@Param('gameId') gameId: string): Promise<Category[]> {
+    return this.categoryService.getCategoriesByGame(gameId);
+  }
 }

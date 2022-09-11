@@ -4,8 +4,8 @@ import { Game } from './game.interface';
 export interface Question {
   id: string;
   content: string;
-  answerIndex: number;
-  answers: string[];
+  answerIndex?: number;
+  answers?: string;
   author: string;
   active: boolean;
   category: Category;

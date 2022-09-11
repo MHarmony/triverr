@@ -55,4 +55,14 @@ export class CategoryService {
       }
     });
   }
+
+  async getCategoriesByGame(gameId: string): Promise<Category[]> {
+    return this.prismaService.category.findMany({
+      orderBy: { title: 'asc' },
+      where: { gameId },
+      include: {
+        game: true
+      }
+    });
+  }
 }

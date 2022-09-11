@@ -91,6 +91,17 @@ describe('CategoryController', () => {
       expect(formatBody(resp.body as Category)).toEqual([defaultBaseCategory]);
     });
   });
+
+  describe('when getting categories by game', () => {
+    it('should return the list of categories', async () => {
+      const resp = await request(app.getHttpServer()).get(
+        `/category/game/${defaultBaseCategory.game.id}`
+      );
+
+      expect(resp.status).toEqual(HttpStatus.OK);
+      expect(formatBody(resp.body as Category)).toEqual([defaultBaseCategory]);
+    });
+  });
 });
 
 function formatBody(category: Category | Category[]): Category | Category[] {
