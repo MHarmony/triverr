@@ -1,4 +1,13 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
-  "prettier.ignorePath": "${workspaceFolder}/.prettierignore"
+  "prettier.ignorePath": "${workspaceFolder}/.prettierignore",
+  "sqltools.useNodeRuntime": true,
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "database": "${workspaceFolder:triverr}/prisma/triverr.db",
+      "name": "triverr"
+    }
+  ]
 }
