@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "mikestead.dotenv",
+    "dbaeumer.vscode-eslint",
+    "firsttris.vscode-jest-runner",
+    "christian-kohler.npm-intellisense",
+    "nrwl.angular-console",
+    "prisma.prisma",
+    "esbenp.prettier-vscode",
+    "christian-kohler.path-intellisense",
+    "mtxr.sqltools",
+    "mtxr.sqltools-driver-sqlite",
+    "editorconfig.editorconfig",
+    "johnpapa.angular2",
+    "cyrilletuzi.angular-schematics",
+    "Angular.ng-template"
+  ]
+}
